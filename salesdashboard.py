@@ -61,7 +61,7 @@ st.markdown("""
 # ── Load data ──────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Sales_SalesRtn_OG.csv")
+    df = pd.read_csv("Sales_SalesRtn.csv")
     df["DOC_DT"] = pd.to_datetime(df["DOC_DT"])
     sales = df[df["ISSALE"] == "S"].copy()
     sales["MARGIN_PCT"] = (
@@ -396,7 +396,7 @@ with col4:
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(
     "<p style='text-align:center;color:#3d3d5e;font-size:11px;'>"
-    "Sales Performance Dashboard · Data: Sales_SalesRtn_OG.csv · "
+    "Sales Performance Dashboard · Data: Sales_SalesRtn.csv · "
     "Click any bar to cross-filter · Click same bar again to deselect"
     "</p>",
     unsafe_allow_html=True,
